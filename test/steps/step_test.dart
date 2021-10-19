@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:survey_kit/src/steps/predefined_steps/instruction_step.dart';
-import 'package:survey_kit/src/steps/step.dart';
+import 'package:survey_kit/src/legacy/steps/predefined_steps/instruction_step.dart';
+import 'package:survey_kit/src/legacy/steps/step.dart';
 import 'package:survey_kit/survey_kit.dart';
 
 void main() {

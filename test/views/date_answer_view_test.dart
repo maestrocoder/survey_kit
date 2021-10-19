@@ -3,10 +3,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
-import 'package:survey_kit/src/answer_format/date_answer_format.dart';
-import 'package:survey_kit/src/controller/survey_controller.dart';
-import 'package:survey_kit/src/steps/predefined_steps/question_step.dart';
-import 'package:survey_kit/src/views/date_answer_view.dart';
+import 'package:survey_kit/src/legacy/answer_format/date_answer_format.dart';
+import 'package:survey_kit/src/legacy/controller/survey_controller.dart';
+import 'package:survey_kit/src/legacy/steps/predefined_steps/question_step.dart';
+import 'package:survey_kit/src/legacy/views/date_answer_view.dart';
 import 'package:survey_kit/survey_kit.dart';
 
 void main() {
