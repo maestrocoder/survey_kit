@@ -1,7 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:survey_kit/survey_kit.dart';
+import 'package:survey_kit/src/legacy/navigator/rules/conditional_navigation_rule.dart';
+import 'package:survey_kit/src/legacy/steps/identifier/step_identifier.dart';
+import 'package:survey_kit/src/legacy/task/identifier/task_identifier.dart';
+import 'package:survey_kit/src/legacy/task/navigable_task.dart';
 
 void main() {
   test('navigable task created by json is the same as created via code', () {

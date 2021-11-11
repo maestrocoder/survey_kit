@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:survey_kit/survey_kit.dart';
+import 'package:survey_kit/src/legacy/answer_format/integer_answer_format.dart';
+import 'package:survey_kit/src/legacy/result/survey/survey_result.dart';
+import 'package:survey_kit/src/legacy/steps/identifier/step_identifier.dart';
+import 'package:survey_kit/src/legacy/steps/predefined_steps/completion_step.dart';
+import 'package:survey_kit/src/legacy/steps/predefined_steps/instruction_step.dart';
+import 'package:survey_kit/src/legacy/steps/predefined_steps/question_step.dart';
+import 'package:survey_kit/src/legacy/survey_kit.dart';
+import 'package:survey_kit/src/legacy/task/identifier/task_identifier.dart';
+import 'package:survey_kit/src/legacy/task/ordered_task.dart';
 
 void main() {
   testWidgets('survey_kit click through three steps',

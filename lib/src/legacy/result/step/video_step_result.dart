@@ -1,6 +1,5 @@
 import 'package:survey_kit/src/legacy/result/question_result.dart';
 import 'package:survey_kit/src/legacy/steps/identifier/identifier.dart';
-import 'package:survey_kit/survey_kit.dart';
 
 class VideoStepResult extends QuestionResult<VideoResult> {
   VideoStepResult({
