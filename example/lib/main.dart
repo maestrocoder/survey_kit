@@ -3,10 +3,11 @@ import 'package:survey_kit/survey_kit.dart';
 import 'package:surveykit_example/linear_survey_step.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -40,23 +41,23 @@ class _MyAppState extends State<MyApp> {
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: ButtonStyle(
             minimumSize: MaterialStateProperty.all(
-              Size(150.0, 60.0),
+              const Size(150, 60),
             ),
             side: MaterialStateProperty.resolveWith(
               (Set<MaterialState> state) {
                 if (state.contains(MaterialState.disabled)) {
-                  return BorderSide(
+                  return const BorderSide(
                     color: Colors.grey,
                   );
                 }
-                return BorderSide(
+                return const BorderSide(
                   color: Colors.cyan,
                 );
               },
             ),
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
+                borderRadius: BorderRadius.circular(8),
               ),
             ),
             textStyle: MaterialStateProperty.resolveWith(
@@ -87,21 +88,20 @@ class _MyAppState extends State<MyApp> {
         body: Container(
           color: Colors.white,
           child: Align(
-            alignment: Alignment.center,
             child: SurveyKit(
               appBar: (controller) => AppBar(
                 leading: TextButton(
-                  child: Text('Next'),
                   onPressed: () => controller.nextStep(),
+                  child: const Text('Next'),
                 ),
               ),
               surveySteps: [
                 SurveyStep(
                   id: '1',
                   stepElements: [
-                    TextElement(text: 'Sample text'),
+                    const TextElement(text: 'Sample text'),
                     TextFieldElement(
-                      valid: (String? input) => input?.isNotEmpty,
+                      valid: (String? input) => input?.isNotEmpty ?? false,
                     ),
                   ],
                   build: (id, stepElements, context) => LinearSurveyStep(
@@ -112,7 +112,7 @@ class _MyAppState extends State<MyApp> {
                 SurveyStep(
                   id: '2',
                   stepElements: [
-                    TextElement(text: 'Step 2'),
+                    const TextElement(text: 'Step 2'),
                     TextFieldElement(),
                   ],
                   build: (id, stepElements, context) => LinearSurveyStep(

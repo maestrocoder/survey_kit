@@ -16,7 +16,7 @@ class SurveyKit extends StatelessWidget {
     this.appBar,
     this.leadingWidget,
     this.trailingWidget,
-  })  : assert(surveySteps.length > 0),
+  })  : assert(surveySteps.length > 0, 'Survey needs at least of step'),
         super(key: key);
 
   @override

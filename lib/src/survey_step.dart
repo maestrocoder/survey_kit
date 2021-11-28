@@ -8,10 +8,13 @@ class SurveyStep extends ConsumerStatefulWidget {
   final List<StepElement> stepElements;
   final Widget Function(String stepId, List<StepElement>, BuildContext) build;
   const SurveyStep({
+    Key? key,
     required this.id,
     required this.stepElements,
     required this.build,
-  }) : assert(stepElements.length > 0 && id.length > 0);
+  })  : assert(stepElements.length > 0 && id.length > 0,
+            'Step needs at least one Element'),
+        super(key: key);
 
   @override
   ConsumerState<SurveyStep> createState() => _SurveyStepState();
@@ -21,24 +24,20 @@ class _SurveyStepState extends ConsumerState<SurveyStep> {
   @override
   void initState() {
     super.initState();
-    widget.stepElements.forEach(
-      (element) {
-        if (element is ResultStepElement) {
-          element.initState();
-        }
-      },
-    );
+    for (final element in widget.stepElements) {
+      if (element is ResultStepElement) {
+        element.initState();
+      }
+    }
   }
 
   @override
   void dispose() {
-    widget.stepElements.forEach(
-      (element) {
-        if (element is ResultStepElement) {
-          element.initState();
-        }
-      },
-    );
+    for (final element in widget.stepElements) {
+      if (element is ResultStepElement) {
+        element.dispose();
+      }
+    }
     super.dispose();
   }
 

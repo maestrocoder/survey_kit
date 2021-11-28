@@ -25,7 +25,7 @@ class SurveyPresenter extends StateNotifier<SurveyStep?> {
     final result = collectResults(currentStep.stepElements);
 
     stepResults.add(result);
-    int index = steps.indexWhere(
+    final index = steps.indexWhere(
       (step) => step.id == state!.id,
     );
     if (steps.length - 1 < index + 1) {
@@ -42,7 +42,7 @@ class SurveyPresenter extends StateNotifier<SurveyStep?> {
     final result = collectResults(currentStep.stepElements);
 
     stepResults.add(result);
-    int index = steps.indexWhere(
+    final index = steps.indexWhere(
       (step) => step.id == state!.id,
     );
     if (index - 1 >= 0) {
@@ -52,7 +52,7 @@ class SurveyPresenter extends StateNotifier<SurveyStep?> {
   }
 
   StepResult collectResults(List<StepElement> elements) {
-    final List<StepElementResult> results = [];
+    final results = <StepElementResult>[];
     for (final element in elements) {
       if (element is ResultStepElement) {
         results.add(element.getResult());

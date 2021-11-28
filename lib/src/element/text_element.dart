@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:survey_kit/src/element/step_element.dart';
 
+@immutable
 class TextElement extends StepElement {
   final String text;
 

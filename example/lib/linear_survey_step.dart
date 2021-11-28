@@ -6,9 +6,10 @@ class LinearSurveyStep extends StatelessWidget {
   final List<StepElement> stepElements;
 
   const LinearSurveyStep({
+    Key? key,
     required this.id,
     required this.stepElements,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class LinearSurveyStep extends StatelessWidget {
             ),
             TextButton(
               onPressed: () => context.nextStep(),
-              child: Text('Next'),
+              child: const Text('Next'),
             ),
           ],
         );

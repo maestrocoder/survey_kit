@@ -38,11 +38,9 @@ class SurveyView extends HookConsumerWidget {
     });
 
     if (_step == null) {
-      return Scaffold(
-        body: Container(
-          child: Center(
-            child: CircularProgressIndicator(),
-          ),
+      return const Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
         ),
       );
     }

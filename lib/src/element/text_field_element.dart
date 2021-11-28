@@ -3,8 +3,8 @@ import 'package:survey_kit/src/element/result_step_element.dart';
 import 'package:survey_kit/src/step_element_result.dart';
 
 class TextFieldElement extends ResultStepElement<String?> {
-  final Function(String? text)? valid;
-  TextEditingController? _textEditingController;
+  final bool Function(String? text)? valid;
+  late final TextEditingController? _textEditingController;
 
   TextFieldElement({
     this.valid,
