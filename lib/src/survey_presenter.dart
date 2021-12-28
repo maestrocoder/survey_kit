@@ -3,7 +3,7 @@ import 'package:survey_kit/src/element/result_step_element.dart';
 import 'package:survey_kit/src/element/step_element.dart';
 import 'package:survey_kit/src/step_element_result.dart';
 import 'package:survey_kit/src/step_result.dart';
-import 'package:survey_kit/survey_kit.dart';
+import 'package:survey_kit/src/survey_step.dart';
 
 class SurveyPresenter extends StateNotifier<SurveyStep?> {
   List<SurveyStep> steps;

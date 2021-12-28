@@ -4,40 +4,39 @@ import 'package:survey_kit/src/step_element_result.dart';
 
 class TextFieldElement extends ResultStepElement<String?> {
   final bool Function(String? text)? valid;
-  late final TextEditingController? _textEditingController;
+  final TextEditingController textEditingController;
+  final InputDecoration? inputDecoration;
 
   TextFieldElement({
+    required this.textEditingController,
+    this.inputDecoration,
     this.valid,
   });
 
   @override
-  void initState() {
-    _textEditingController = TextEditingController();
-  }
-
-  @override
   void dispose() {
-    _textEditingController?.dispose();
+    textEditingController.dispose();
   }
 
   @override
   Widget createWidget() {
     return TextField(
-      controller: _textEditingController,
+      controller: textEditingController,
+      decoration: inputDecoration,
     );
   }
 
   @override
   StepElementResult<String?> getResult() {
     return StepElementResult(
-      value: _textEditingController?.text,
+      value: textEditingController.text,
     );
   }
 
   @override
   bool validate() {
     if (valid != null) {
-      return valid!.call(_textEditingController?.text);
+      return valid!.call(textEditingController.text);
     }
     return super.validate();
   }

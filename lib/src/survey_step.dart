@@ -43,6 +43,6 @@ class _SurveyStepState extends ConsumerState<SurveyStep> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.build.call(widget.id, widget.stepElements, context);
+    return widget.build(widget.id, widget.stepElements, context);
   }
 }

@@ -24,16 +24,21 @@ class _MyAppState extends State<MyApp> {
         ),
         primaryColor: Colors.cyan,
         backgroundColor: Colors.white,
-        appBarTheme: const AppBarTheme(
+        appBarTheme: AppBarTheme(
           color: Colors.white,
-          iconTheme: IconThemeData(
+          iconTheme: const IconThemeData(
             color: Colors.cyan,
           ),
-          textTheme: TextTheme(
+          toolbarTextStyle: const TextTheme(
             button: TextStyle(
               color: Colors.cyan,
             ),
-          ),
+          ).bodyText2,
+          titleTextStyle: const TextTheme(
+            button: TextStyle(
+              color: Colors.cyan,
+            ),
+          ).headline6,
         ),
         iconTheme: const IconThemeData(
           color: Colors.cyan,
@@ -97,11 +102,40 @@ class _MyAppState extends State<MyApp> {
               ),
               surveySteps: [
                 SurveyStep(
+                  key: const Key('1'),
                   id: '1',
                   stepElements: [
-                    const TextElement(text: 'Sample text'),
+                    const MarkdownElement(text: 'Insert emoji here 😀'),
+                    const TextElement(
+                      text: 'Sample text',
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                     TextFieldElement(
+                      textEditingController: TextEditingController(),
                       valid: (String? input) => input?.isNotEmpty ?? false,
+                      inputDecoration: InputDecoration(
+                        contentPadding: const EdgeInsets.only(
+                          left: 8,
+                          bottom: 8,
+                          top: 8,
+                          right: 8,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.zero,
+                          borderSide: BorderSide(
+                            color: Colors.black.withOpacity(0.2),
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.zero,
+                          borderSide: BorderSide(
+                            color: Colors.black.withOpacity(0.2),
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                   build: (id, stepElements, context) => LinearSurveyStep(
@@ -109,17 +143,6 @@ class _MyAppState extends State<MyApp> {
                     stepElements: stepElements,
                   ),
                 ),
-                SurveyStep(
-                  id: '2',
-                  stepElements: [
-                    const TextElement(text: 'Step 2'),
-                    TextFieldElement(),
-                  ],
-                  build: (id, stepElements, context) => LinearSurveyStep(
-                    id: id,
-                    stepElements: stepElements,
-                  ),
-                )
               ],
             ),
           ),
